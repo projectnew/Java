@@ -1,0 +1,23 @@
+public class MyLinkedlist {
+    int Index;
+    LinkedListNode head;
+
+
+    public void add(String data) {
+        LinkedListNode temp;
+        LinkedListNode a = new LinkedListNode(data);
+
+        if (head == null) {
+            head = new LinkedListNode(data);
+        } else {
+            temp = head;
+            while (temp.getNext() != null) {
+                temp = temp.getNext();
+            }
+            LinkedListNode nodeToAdd = new LinkedListNode(data);
+            temp.setNext(nodeToAdd);
+        }
+
+
+    }
+}
