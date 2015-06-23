@@ -1,0 +1,25 @@
+public class LinkedListNode {
+    private String data;
+    private LinkedListNode next;
+
+    public LinkedListNode(String dataValue) {
+        data = dataValue;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String dataValue) {
+        data = dataValue;
+    }
+
+    public LinkedListNode getNext() {
+        return next;
+    }
+
+    public void setNext(LinkedListNode nextValue) {
+        this.next = nextValue;
+    }
+
+}
