@@ -47,3 +47,43 @@ public class Run {
     }
 }
 
+public class Employee {
+
+public static void main(String[] args){
+    Employee New = new Employee (6);
+
+    Who Olya = new Who("wife");
+    Who Vasya = new Who("sosed");
+
+    New.setSalary(200.5);
+
+
+    System.out.println(New.getSalary(Olya));
+}
+private int id;
+private double salary;
+private Who getWho;
+
+    Employee (int id){
+        this.id = id;
+    }
+ public Object getWho(){
+     return getWho;
+ }
+
+    public void setWho(Who who) {
+        this.getWho = (Who) who;
+    }
+
+    public double getSalary(Who who) {
+    // if (who.equals("Wife")) return salary;
+        if (who.getType().equals("wife")) return this.salary;
+     else return 0;
+ }
+
+ public void setSalary (double salary) {
+     this.salary = salary*id;
+ }
+    //setID(int newID){this.id=newID;}
+}
+//command+N
