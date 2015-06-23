@@ -1,0 +1,88 @@
+public class RunCasino {
+
+    public static void main(String[] args) {
+        Player vova = new Player();
+        Casino gold = new Casino();
+
+
+
+
+        gold.login(vova);
+        int bet = gold.roulette("red", 2, 77);
+
+        vova.setTotalBalance(vova.getTotalBalance() + bet);
+
+        System.out.println("Your bet is " + bet);
+        System.out.println("New balance is " + vova.getTotalBalance());
+        System.out.println("Status is " + vova.getOnline());
+
+
+    }
+}
+
+public class Player {
+
+    private boolean Online;
+    private int totalBalance;
+
+    public Player() {
+        this.Online = false;
+        this.totalBalance = 1000;
+    }
+
+
+   public boolean getOnline() {
+        return Online;
+    }
+    public void setOnline(boolean Online) {
+        this.Online = Online;
+    }
+    public int getTotalBalance() {
+        return totalBalance;
+    }
+    public void setTotalBalance(int totalBalance) {
+        this.totalBalance = totalBalance;
+    }
+}
+
+import java.util.Random;
+
+public class Casino {
+
+   /* public boolean loginout (Player player) {
+        if (player.getOnline();
+             player.setOnline(true);}
+           else {
+
+           player.setOnline(false);*/
+   public Player login(Player player) {
+       player.setOnline(true);
+       return player;
+   }
+
+    public Player logout(Player player) {
+        player.setOnline(false);
+        return player;
+    }
+
+
+
+    public int roulette(String color, int number, int bet) {
+        Random random = new Random();
+        int winNumber = random.nextInt(31);
+
+        String colorWin;
+        if (winNumber % 2 == 0) {
+            colorWin = "red";
+        } else {
+            colorWin = "black";
+        }
+        if (color.equals(colorWin) && winNumber == number) {
+            return bet * 10;
+        } else if (color.equals(colorWin) || winNumber == number) {
+            return -bet * 2;
+        } else {
+            return -bet;
+        }
+    }
+}
