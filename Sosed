@@ -1,0 +1,49 @@
+public class Wife {
+    String type;
+    public String getType(){
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+}
+
+public class Who {
+    String type;
+    public String getType(){
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+    Who (String type){
+        this.type = type;
+    }
+}
+
+public class Sosed {
+    String type;
+    public String getType(){
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+}
+
+
+public class Run {
+    public static void main(String[] args) {
+
+        MyLinkedlist list = new MyLinkedlist();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+
+
+        //System.out.println(list.index);
+        //insert and pop and remove
+        //insert (int index, String value) int Index; index ++
+    }
+}
+
