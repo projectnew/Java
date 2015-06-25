@@ -1,0 +1,28 @@
+public class FileReader {
+    public FileInputStream FIS = null;
+
+    public void openFile() throws IOException {
+
+        File dir = new File(".");
+        File F2 = new File(dir.getCanonicalPath() + File.separator + "not_existing_file.txt");
+
+        FIS = new FileInputStream(F2);
+    }
+}
+
+public class RunFileReader {
+
+    public static void main(String[] args) {
+        FileReader reader = new FileReader();
+
+        try {
+            reader.openFile();
+            System.out.println("try");
+        } catch (IOException e) {
+//            e.printStackTrace()
+            System.out.println("catch");
+        } finally {
+            System.out.println("finally");
+        }
+    }
+}
