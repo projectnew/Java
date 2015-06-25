@@ -1,0 +1,36 @@
+
+public class FinallyDemo {
+
+    public static void main(String[] args){
+        try {
+            methA();
+        }
+         catch (Exception e){
+         }
+        methB();
+        }
+    static void methA()
+    //throws RuntimeException
+    {
+        try {
+            System.out.println("methA");
+            throw new RuntimeException("demo");
+                } finally {
+      //  }catch(RuntimeException e) {
+            System.out.println("methA, finally");
+        }
+    }
+    static void methB()
+    //throws RuntimeException
+    {
+        try {
+            System.out.println("methB");
+            return;
+            //throw new RuntimeException("demo");
+                } finally {
+        //} catch (RuntimeException e) {
+            System.out.println("methB, finally");
+        }
+    }
+    }
+// Throwable - error and exception  - IOException (FileNotFound Exception), ClassNotFound Exception, CloneNotSupported Exception, Runtime Exception
