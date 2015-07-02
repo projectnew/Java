@@ -1,0 +1,83 @@
+import java.rmi.StubNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by kseniyavorontsova on 6/29/15.
+ */
+public class Student {
+    private int age;
+//command + /
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//
+//        Student student = (Student) o;
+//
+//        if (age != student.age) return false;
+//
+//        return true;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return age;
+//    }
+
+    Student(int ageValue) {
+        age = ageValue;
+
+    }
+public static Integer id = 10;
+
+
+
+    public static void getName(){
+
+    }
+
+
+    public static void main(String[] args) {
+       /* HashMap student = new HashMap();
+        student.put("age", 21);
+        System.out.println(student.get("age"));*/
+
+        Map<Student, String> map = new HashMap<Student, String>();
+        map.put(new Student(21), "Sam");
+
+        map.put(new Student(23), "Jessy");
+
+        Student student = new Student(22);
+        map.put(student, "Bill");
+
+        Student.getName();
+        student.getName();
+
+        System.out.println(map.keySet());
+        System.out.println(map.values());
+        System.out.println(map.get(student));
+        System.out.println(map.get(new Student(21)));
+        System.out.println(new Student(21).hashCode());
+        System.out.println(new Student(21).hashCode());
+        System.out.println(Student.id);/*обратилась к имени класса, static - for class, non-static - object*/
+
+
+        Student s1 = new Student(41);
+        Student s2 = new Student(41);
+
+        System.out.println(s1.equals(s2));
+
+    }
+}
+/*
+int array [] = new int[10] {5,6,5,1,8,10,12}
+Map<Inter, List> map = new HashMap();
+For (int i=0; i>arr.lengtn; i++){
+IF (map.get (arr[i] = = null){
+list<Integer> list = new linkedlist();
+List.add(i))
+}
+
+ */
+/*alt+command+l*/
